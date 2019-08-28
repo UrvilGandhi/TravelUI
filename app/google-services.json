@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "804310403742",
+    "firebase_url": "https://sunshine-travel-12414.firebaseio.com",
+    "project_id": "sunshine-travel-12414",
+    "storage_bucket": "sunshine-travel-12414.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804310403742:android:fdb7fdfff50a245b",
+        "android_client_info": {
+          "package_name": "com.example.sunshinetravel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804310403742-s7if96h950trpgd0o5askp9lh44pae2c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sunshinetravel",
+            "certificate_hash": "f5b4bdcf81395b08a16fde7c60c9348cf9d5d491"
+          }
+        },
+        {
+          "client_id": "804310403742-ppt30b0iq2pj3ricta1cjiosp7r8fpke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqhGRADEhlrnvgQqeEg_dpxDOlyerIVjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804310403742-ppt30b0iq2pj3ricta1cjiosp7r8fpke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

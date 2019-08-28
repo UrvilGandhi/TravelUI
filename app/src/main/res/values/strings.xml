@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Sunshine Travel</string>
+    <string name="signup_google">Signup with Google</string>
+    <string name="signup_facebook">Signup with Facebook</string>
+    <string name="signup_email">Signup</string>
+
+    <string name="font_montserrat_Bold">Montserrat-Bold.ttf</string>
+    <string name="font_montserrat_Light">Montserrat-Light.ttf</string>
+    <string name="font_montserrat_Regular">Montserrat-Regular.ttf</string>
+    <string name="font_montserrat_SemiBold">Montserrat-SemiBold.ttf</string>
+</resources>
