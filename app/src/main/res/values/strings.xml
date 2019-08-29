@@ -2,10 +2,31 @@
     <string name="app_name">Sunshine Travel</string>
     <string name="signup_google">Signup with Google</string>
     <string name="signup_facebook">Signup with Facebook</string>
-    <string name="signup_email">Signup</string>
+    <string name="facebook_app_id">503439846867619</string>
+    <string name="fb_login_protocol_scheme">fb503439846867619</string>
 
     <string name="font_montserrat_Bold">Montserrat-Bold.ttf</string>
     <string name="font_montserrat_Light">Montserrat-Light.ttf</string>
     <string name="font_montserrat_Regular">Montserrat-Regular.ttf</string>
     <string name="font_montserrat_SemiBold">Montserrat-SemiBold.ttf</string>
+
+    <string name="action_logout"> Log Out</string>
+    <string name="loading">Loading</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="login_with_email">Login with Email</string>
+    <string name="nav_register">New to Sunshine travel ? Register</string>
+    <string name="logo">logo</string>
+    <string name="background">background</string>
+    <string name="signup">Register</string>
+    <string name="signin">Login</string>
+    <string name="registration">Registration</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_mobile_no">Enter Mobile No.</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="nav_login">Already Registered ? Skip to Login</string>
+    <string name="discover">DISCOVER</string>
+    <string name="discover_desc">Whether it\'s coast or canyons,Victoria Falls or Antartica: we\'re sure to have an adventure tour that suits you best</string>
+    <string name="enter_username">Enter Username</string>
 </resources>

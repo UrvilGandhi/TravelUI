@@ -143,4 +143,13 @@
     <color name="facebook_blue">#3e64ff</color>
     <color name="google_red">#ff5858</color>
     <color name="transparent">#00000000</color>
+
+    <color name="primary_light">#C5CAE9</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#536DFE</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="secondary_text">#212121</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
 </resources>

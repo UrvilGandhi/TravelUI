@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/background"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/background" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:contentDescription="@string/logo"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toTopOf="@+id/background"
+        app:layout_constraintVertical_bias="0.209"
+        app:srcCompat="@drawable/logo" />
+
+    <com.example.sunshinetravel.CustomWidgets.CustomEditText
+        android:id="@+id/edt_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/rounded_rectangle"
+        android:ems="10"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:fontName="@string/font_montserrat_Regular"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <com.example.sunshinetravel.CustomWidgets.CustomEditText
+        android:id="@+id/edt_password"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@drawable/rounded_rectangle"
+        android:ems="10"
+        android:hint="@string/enter_password"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:fontName="@string/font_montserrat_Regular"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/edt_username"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <com.example.sunshinetravel.CustomWidgets.CustomButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="15dp"
+        android:text="@string/signin"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_SemiBold"
+        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintEnd_toEndOf="@+id/login_button"
+        app:layout_constraintStart_toStartOf="@+id/login_button" />
+
+
+    <com.example.sunshinetravel.CustomWidgets.CustomButton
+        android:id="@+id/btn_google"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/google_red"
+        android:padding="15dp"
+        android:text="@string/login_with_google"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/floral_white"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_SemiBold"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@color/com_facebook_button_background_color"
+        android:text="@string/login_with_facebook"
+        android:textColor="@color/com_facebook_button_text_color"
+        app:fontName="@string/font_montserrat_SemiBold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_google"
+        app:layout_constraintEnd_toEndOf="@+id/btn_google"
+        app:layout_constraintStart_toStartOf="@+id/btn_google" />
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:fontName="@string/font_montserrat_Bold"
+        android:text="@string/nav_register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_google"
+        app:layout_constraintStart_toStartOf="@+id/btn_google" />
+</androidx.constraintlayout.widget.ConstraintLayout>
