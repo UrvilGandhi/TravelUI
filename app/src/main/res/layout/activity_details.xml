@@ -1,10 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.DetailsActivity">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/cutlayout" />
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back"
+            android:layout_margin="24dp"/>
+
+        <RelativeLayout
+            android:background="@drawable/circle"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignTop="@+id/btnShare"
+            android:layout_toStartOf="@+id/btnShare">
+
+            <com.like.LikeButton
+                android:id="@+id/btnLike"
+                android:layout_centerInParent="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:icon_type="heart"
+                app:circle_start_color="@color/colorPrimary"
+                app:like_drawable="@drawable/heart_on"
+                app:unlike_drawable="@drawable/heart_off"
+                app:dots_primary_color="@color/colorAccent"
+                app:dots_secondary_color="@color/colorPrimary"
+                app:circle_end_color="@color/colorAccent"
+                app:icon_size="15dp"
+                app:liked="true"
+                app:anim_scale_factor="3"
+                app:is_enabled="true"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/btnShare"
+            android:layout_width="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_height="30dp"
+            android:src="@drawable/share"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"/>
+
+    <LinearLayout
+        android:id="@+id/whole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/background"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-100dp">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/bridge"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="5dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="bottom">
+
+            <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alcatraz_crusies"
+                android:textSize="24sp"
+                app:fontName="@string/font_montserrat_SemiBold"
+                android:textColor="@color/steel_blue"/>
+
+            <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                app:fontName="@string/font_montserrat_SemiBold"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/whole"
+        android:layout_margin="15dp"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_Regular"
+        android:textColor="@color/steel_blue"
+        android:text="Official boat trip &amp; tour company exploring The Rock &amp; Angel Island leaving from Pier 33."/>
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/locatedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_SemiBold"
+        android:textColor="@color/steel_blue"
+        android:text="Located in : "/>
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/located"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/locatedIn"
+        android:layout_below="@+id/intro"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_Regular"
+        android:textColor="@color/steel_blue"
+        android:text="Alcatraz Landing"/>
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locatedIn"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_SemiBold"
+        android:textColor="@color/steel_blue"
+        android:text="Address : "/>
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/Address"
+        android:layout_below="@+id/locatedIn"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_Regular"
+        android:textColor="@color/steel_blue"
+        android:text="San Francisco, CA 94111, USA"/>
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Address"
+        android:layout_marginStart="15dp"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_SemiBold"
+        android:textColor="@color/steel_blue"
+        android:text="Phone : "/>
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/Phone"
+        android:layout_below="@+id/address"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_Regular"
+        android:textColor="@color/steel_blue"
+        android:text="+1 415-981-7625"/>
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/Details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Phone"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_SemiBold"
+        android:textColor="@color/steel_blue"
+        android:text="Description : "/>
+
+    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Details"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        app:fontName="@string/font_montserrat_Regular"
+        android:textColor="@color/steel_blue"
+        android:text="Alcatraz Cruises is the official National Park Service concessioner and exclusive provider of ferry services to Alcatraz Island. Alcatraz Cruises is located at Pier 33 Alcatraz Landing, San Francisco, CA 94111. All Alcatraz Cruises tour tickets include roundtrip ferry transportation, the audio tour inside the Cellhouse and programs on Alcatraz Island."/>
+
+    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

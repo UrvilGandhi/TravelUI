@@ -137,4 +137,10 @@
     <string name="tour_de_san_francisco">Tour De San Francisco</string>
     <string name="alcatraz_crusies">Alcatraz Crusies</string>
     <string name="_12_3_km">12.3 KM</string>
+
+    <string-array name="navigation_drawer_items_array">
+        <item>Connect</item>
+        <item>Fixtures</item>
+        <item>Table</item>
+    </string-array>
 </resources>

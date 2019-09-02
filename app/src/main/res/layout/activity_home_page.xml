@@ -27,53 +27,74 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <RelativeLayout
+                android:id="@+id/relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.example.sunshinetravel.CustomDrawerLayout
+                    android:id="@+id/drawer_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="0dp"
-                android:layout_height="250dp"
-                android:contentDescription="@string/wonders_of_canada"
-                android:scaleType="fitXY"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/wonder_of_canada" />
 
-            <ImageView
-                android:id="@+id/menu"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:contentDescription="@string/menu"
-                app:layout_constraintBottom_toBottomOf="@+id/destination"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView5"
-                app:srcCompat="@drawable/menu" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-            <com.example.sunshinetravel.CustomWidgets.CustomTextView
-                android:id="@+id/destination"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/destinations"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:fontName="@string/font_montserrat_SemiBold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.43"
-                app:layout_constraintStart_toEndOf="@+id/menu"
-                app:layout_constraintTop_toTopOf="@+id/imageView5" />
+                        <LinearLayout
+                            android:id="@+id/container_toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <include
+                                android:id="@+id/toolbar"
+                                layout="@layout/toolbar" />
+                        </LinearLayout>
+
+
+                        <FrameLayout
+                            android:id="@+id/content_frame"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/left_drawer"
+                        android:layout_width="240dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:background="#FFFFFF"
+                        android:choiceMode="singleChoice"
+                        android:divider="@android:color/darker_gray"
+                        android:dividerHeight="1dp" />
+
+                </com.example.sunshinetravel.CustomDrawerLayout>
+            </RelativeLayout>
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/canada_constraint"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/relative_layout"
                 app:layout_constraintBottom_toTopOf="@+id/italy_constraint"
-                app:layout_constraintEnd_toEndOf="@+id/imageView5"
-                app:layout_constraintStart_toStartOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/destination">
+                app:layout_constraintEnd_toEndOf="@+id/relative_layout"
+                app:layout_constraintStart_toStartOf="@+id/relative_layout">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/wonders_of_canada"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/wonder_of_canada" />
 
                 <ImageView
                     android:id="@+id/clock"
@@ -167,7 +188,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/canada_constraint"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/canada_constraint"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5">
+                app:layout_constraintTop_toBottomOf="@+id/canada_constraint">
 
                 <ImageView
                     android:id="@+id/imageView9"
@@ -177,7 +198,6 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/italy" />
 
                 <ImageView

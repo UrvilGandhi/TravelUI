@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Activity.DetailsActivity"></activity>
+        android:theme="@style/Theme.AppCompat.Light.FullScreen">
+        <activity android:name=".NavigationActivity"></activity>
+        <activity android:name=".Activity.DetailsActivity" />
         <activity android:name=".PlacesListActivity" />
         <activity android:name=".Activity.HomePageActivity" />
         <activity android:name=".Activity.RegisterActivity" />
