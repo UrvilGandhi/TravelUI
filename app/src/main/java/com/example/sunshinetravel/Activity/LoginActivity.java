@@ -15,6 +15,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sunshinetravel.HomeFragment;
+import com.example.sunshinetravel.MainActivity;
 import com.example.sunshinetravel.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -75,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onSuccess(LoginResult loginResult) {
                         Log.e(TAG, "facebook:onSuccess:" + loginResult);
                         handleFacebookAccessToken(loginResult.getAccessToken());
-                        startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     }
 
                     @Override

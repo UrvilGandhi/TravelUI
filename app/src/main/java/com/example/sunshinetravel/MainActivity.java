@@ -1,46 +1,50 @@
 package com.example.sunshinetravel;
 
-import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
-import com.example.sunshinetravel.Activity.HomePageActivity;
+public class MainActivity extends AppCompatActivity {
 
-public class NavigationActivity extends AppCompatActivity {
-
-    private String[] mNavigationDrawerItemTitles;
-    private DrawerLayout mDrawerLayout;
-    private ListView mDrawerList;
     Toolbar toolbar;
+    ActionBarDrawerToggle mDrawerToggle;
+    Fragment fragment = new HomeFragment();
+    private String[] mNavigationDrawerItemTitles;
+    private CustomDrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-    ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation);
-        mTitle = mDrawerTitle = getTitle();
-        mNavigationDrawerItemTitles= getResources().getStringArray(R.array.navigation_drawer_items_array);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+        setContentView(R.layout.activity_main);
+        mTitle = "Destinations";
+        mNavigationDrawerItemTitles = getResources().getStringArray(R.array.navigation_drawer_items_array);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        mDrawerList = findViewById(R.id.left_drawer);
 
         setupToolbar();
 
         DataModel[] drawerItem = new DataModel[6];
 
         drawerItem[0] = new DataModel(R.drawable.home, "Home");
-        drawerItem[1] = new DataModel(R.drawable.pinpoint, "Location");
+        drawerItem[1] = new DataModel(R.drawable.location, "Location");
         drawerItem[2] = new DataModel(R.drawable.favourites, "Favourites");
-        drawerItem[3] = new DataModel(R.drawable.wishlist,"WishList");
+        drawerItem[3] = new DataModel(R.drawable.wishlist, "WishList");
         drawerItem[4] = new DataModel(R.drawable.profile, "Profile");
         drawerItem[5] = new DataModel(R.drawable.settings, "Settings");
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -49,56 +53,60 @@ public class NavigationActivity extends AppCompatActivity {
         DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(this, R.layout.list_row_menu, drawerItem);
         mDrawerList.setAdapter(adapter);
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         setupDrawerToggle();
 
-    }
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
+        } else {
+            Log.e("MainActivity", "Error in creating fragment");
         }
 
     }
 
     private void selectItem(int position) {
 
+
         switch (position) {
             case 0:
-                startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+                fragment = new HomeFragment();
                 break;
-//            case 1:
+            case 1:
 //                fragment = new FixturesFragment();
-//                break;
-//            case 2:
+                break;
+            case 2:
 //                fragment = new TableFragment();
-//                break;
+                break;
 
             default:
                 break;
         }
 
-//        if (fragment != null) {
-//            FragmentManager fragmentManager = getSupportFragmentManager();
-//            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
             mDrawerList.setItemChecked(position, true);
             mDrawerList.setSelection(position);
             setTitle(mNavigationDrawerItemTitles[position]);
             mDrawerLayout.closeDrawer(mDrawerList);
 
-//        } else {
-//            Log.e("MainActivity", "Error in creating fragment");
-//        }
+        } else {
+            Log.e("MainActivity", "Error in creating fragment");
+        }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (mDrawerToggle.onOptionsItemSelected(item)) {
+            if (item.isChecked()) {
+                item.setIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.royal_blue)));
+            }
             return true;
         }
 
@@ -117,15 +125,24 @@ public class NavigationActivity extends AppCompatActivity {
         mDrawerToggle.syncState();
     }
 
-    void setupToolbar(){
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+    void setupToolbar() {
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    void setupDrawerToggle(){
-        mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
+    void setupDrawerToggle() {
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         //This is necessary to change the icon of the Drawer Toggle upon state change.
         mDrawerToggle.syncState();
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            selectItem(position);
+        }
+
     }
 }

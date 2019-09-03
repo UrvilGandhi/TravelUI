@@ -137,10 +137,17 @@
     <string name="tour_de_san_francisco">Tour De San Francisco</string>
     <string name="alcatraz_crusies">Alcatraz Crusies</string>
     <string name="_12_3_km">12.3 KM</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string-array name="navigation_drawer_items_array">
-        <item>Connect</item>
-        <item>Fixtures</item>
-        <item>Table</item>
+        <item>Home</item>
+        <item>Location</item>
+        <item>Favourites</item>
+        <item>WishList</item>
+        <item>Profile</item>
+        <item>Settings</item>
     </string-array>
 </resources>
