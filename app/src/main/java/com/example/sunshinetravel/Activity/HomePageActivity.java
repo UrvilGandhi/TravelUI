@@ -16,10 +16,10 @@
 //import android.widget.ImageView;
 //import android.widget.ListView;
 //
-//import com.example.sunshinetravel.CustomDrawerLayout;
-//import com.example.sunshinetravel.DataModel;
-//import com.example.sunshinetravel.DrawerItemCustomAdapter;
-//import com.example.sunshinetravel.PlacesListActivity;
+//import com.example.sunshinetravel.CustomWidgets.CustomDrawerLayout;
+//import com.example.sunshinetravel.Model.DataModel;
+//import com.example.sunshinetravel.Adapter.DrawerItemCustomAdapter;
+//import com.example.sunshinetravel.Activity.PlacesListActivity;
 //import com.example.sunshinetravel.R;
 //
 //public class HomePageActivity extends AppCompatActivity {

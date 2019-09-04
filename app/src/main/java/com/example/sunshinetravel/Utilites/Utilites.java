@@ -1,4 +1,4 @@
-package com.example.sunshinetravel;
+package com.example.sunshinetravel.Utilites;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

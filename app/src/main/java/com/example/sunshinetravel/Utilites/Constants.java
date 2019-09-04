@@ -1,4 +1,4 @@
-package com.example.sunshinetravel;
+package com.example.sunshinetravel.Utilites;
 
 public class Constants {
 

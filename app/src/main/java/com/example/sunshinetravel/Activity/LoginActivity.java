@@ -15,8 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sunshinetravel.HomeFragment;
-import com.example.sunshinetravel.MainActivity;
 import com.example.sunshinetravel.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -122,6 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                     // Sign in success, update UI with the signed-in user's information
                     Log.e(TAG, "signInWithEmail:success");
                     FirebaseUser user = mAuth.getCurrentUser();
+                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
                     updateUI(user);
                 } else {
                     // If sign in fails, display a message to the user.

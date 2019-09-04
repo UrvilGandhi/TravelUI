@@ -1,4 +1,4 @@
-package com.example.sunshinetravel;
+package com.example.sunshinetravel.CustomWidgets;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -1,4 +1,4 @@
-package com.example.sunshinetravel;
+package com.example.sunshinetravel.Model;
 
 /**
  * Created by AndroidBash on 10/07/16

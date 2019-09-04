@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 
 import androidx.appcompat.widget.AppCompatEditText;
 
-import com.example.sunshinetravel.Constants;
+import com.example.sunshinetravel.Utilites.Constants;
 import com.example.sunshinetravel.R;
 
 public class CustomEditText extends AppCompatEditText {

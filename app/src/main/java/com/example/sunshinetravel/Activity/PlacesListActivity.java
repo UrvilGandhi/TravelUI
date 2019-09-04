@@ -1,4 +1,4 @@
-package com.example.sunshinetravel;
+package com.example.sunshinetravel.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.sunshinetravel.Adapter.PlaceListAdapter;
+import com.example.sunshinetravel.R;
 
 public class PlacesListActivity extends AppCompatActivity {
 

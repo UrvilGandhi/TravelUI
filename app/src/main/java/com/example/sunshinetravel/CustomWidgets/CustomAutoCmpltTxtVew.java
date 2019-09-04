@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 
-import com.example.sunshinetravel.Constants;
+import com.example.sunshinetravel.Utilites.Constants;
 import com.example.sunshinetravel.R;
 
 public class CustomAutoCmpltTxtVew extends AppCompatAutoCompleteTextView {

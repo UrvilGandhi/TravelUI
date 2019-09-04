@@ -2,9 +2,6 @@ package com.example.sunshinetravel.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sunshinetravel.Activity.DetailsActivity;
-import com.example.sunshinetravel.PlacesListActivity;
+import com.example.sunshinetravel.Activity.PlacesListActivity;
 import com.example.sunshinetravel.R;
 import com.squareup.picasso.Picasso;
 

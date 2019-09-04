@@ -3,27 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_weight="16"
+    android:id="@+id/linear_layout"
     android:background="@color/white"
     android:minHeight="?android:attr/listPreferredItemHeightSmall"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="25dp">
 
     <ImageView
         android:id="@+id/imageViewIcon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
-        android:paddingEnd="10dp" />
+        android:padding="5dp" />
 
     <com.example.sunshinetravel.CustomWidgets.CustomTextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingEnd="10dp"
+        android:layout_margin="8dp"
         android:textAlignment="center"
         android:textColor="@color/gray"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:fontName="@string/font_montserrat_Regular" />
 
 </LinearLayout>
