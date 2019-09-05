@@ -1,6 +1,7 @@
 package com.example.sunshinetravel.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -120,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
                     // Sign in success, update UI with the signed-in user's information
                     Log.e(TAG, "signInWithEmail:success");
                     FirebaseUser user = mAuth.getCurrentUser();
-                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     updateUI(user);
                 } else {
                     // If sign in fails, display a message to the user.
@@ -176,6 +177,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Log.e(TAG, "signInWithCredential:success");
+                    SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("isLogin", true);
+                    editor.apply();
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateUI(user);
                 } else {

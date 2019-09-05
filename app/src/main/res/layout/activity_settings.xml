@@ -10,6 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_blue"
         android:elevation="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,210 +29,412 @@
                 android:maxLines="1"
                 android:paddingRight="70dp"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:fontName="@string/font_montserrat_SemiBold" />
+
+            <ImageView
+                android:id="@+id/toolbarTool"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_alignTop="@+id/tv_title"
+                android:layout_alignBottom="@+id/tv_title"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/setting_tool" />
 
         </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/background" />
-
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtName"
-        app:layout_constraintEnd_toEndOf="@+id/txtName"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/txtName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68"
-        app:srcCompat="@drawable/canada" />
-
-    <com.example.sunshinetravel.CustomWidgets.CustomTextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Kate Hollmann"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:fontName="@string/font_montserrat_SemiBold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.43" />
-
-    <LinearLayout
-        android:id="@+id/profLinear"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/txtName"
-        app:layout_constraintVertical_bias="0.77">
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_weight="25"
-            android:orientation="vertical">
-
-            <com.example.sunshinetravel.CustomWidgets.CustomTextView
-                android:id="@+id/postCount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:fontName="@string/font_montserrat_SemiBold" />
-
-            <com.example.sunshinetravel.CustomWidgets.CustomTextView
-                android:id="@+id/posts"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Posts"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:fontName="@string/font_montserrat_Regular" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:orientation="vertical">
-
-            <com.example.sunshinetravel.CustomWidgets.CustomTextView
-                android:id="@+id/likesCount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="30"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:fontName="@string/font_montserrat_SemiBold" />
-
-            <com.example.sunshinetravel.CustomWidgets.CustomTextView
-                android:id="@+id/likes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Likes"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:fontName="@string/font_montserrat_Regular" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:orientation="vertical">
-
-            <com.example.sunshinetravel.CustomWidgets.CustomTextView
-                android:id="@+id/followersCount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="25"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:fontName="@string/font_montserrat_SemiBold" />
-
-            <com.example.sunshinetravel.CustomWidgets.CustomTextView
-                android:id="@+id/followers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Followers"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:fontName="@string/font_montserrat_Regular" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:orientation="vertical">
-
-            <com.example.sunshinetravel.CustomWidgets.CustomTextView
-                android:id="@+id/followingCount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="60"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:fontName="@string/font_montserrat_SemiBold" />
-
-            <com.example.sunshinetravel.CustomWidgets.CustomTextView
-                android:id="@+id/following"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Following"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:fontName="@string/font_montserrat_Regular" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <com.example.sunshinetravel.CustomWidgets.CustomButton
-        android:id="@+id/btnFollow"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/rounded_rectangle"
-        android:text="Follow"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profLinear"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-    <com.example.sunshinetravel.CustomWidgets.CustomTextView
-        android:id="@+id/textView8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Passionate about travelling at different places which have historical and cultural values.I also love to roam in my local neighbourhodd and guide tourists at different places.If any anyone need personal guide ,please contact:- 8460851995"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:fontName="@string/font_montserrat_Regular"
-        app:layout_constraintBottom_toTopOf="@+id/profLinear"
-        app:layout_constraintEnd_toEndOf="@+id/txtName"
-        app:layout_constraintStart_toStartOf="@+id/txtName"
-        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@color/white" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/profilePhoto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/canada" />
+
+            <ImageView
+                android:id="@+id/editPhotoIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toBottomOf="@+id/profilePhoto"
+                app:layout_constraintEnd_toEndOf="@+id/profilePhoto"
+                app:layout_constraintStart_toStartOf="@+id/profilePhoto"
+                app:layout_constraintTop_toTopOf="@+id/profilePhoto"
+                app:srcCompat="@drawable/photo_edit_icon" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profilePhoto">
+
+                <RelativeLayout
+                    android:id="@+id/relativeName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view">
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/txtName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Name"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="Alexander Karev"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeName">
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/txtTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Title"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="UI Designer @ Five"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeBio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/relativeTitle">
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/txtBio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Bio"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/bio"
+                        android:layout_width="238dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:text="Born in Singapore, Studied at National Institute of Designing(India), Working at Five Agency."
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtInfo" />
+
+                <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                    android:id="@+id/txtInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="INFO"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:fontName="@string/font_montserrat_Light"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constarint_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/constarint_connect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint_info">
+
+                <RelativeLayout
+                    android:id="@+id/relativeEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/txtEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/email"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@string/sample_email"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeEmail">
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/txtMobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/mobile_number"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="(+91) 8460 851995"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/relativeMobile">
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/txtLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/location"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+
+                    <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                        android:id="@+id/location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@string/sample_address"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:fontName="@string/font_montserrat_Regular" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAccount" />
+
+                <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                    android:id="@+id/txtAccount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="ACCOUNT"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:fontName="@string/font_montserrat_Light"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constarint_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/background"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profilePhoto"
+                app:layout_constraintVertical_bias="1.0">
+
+                <com.example.sunshinetravel.CustomWidgets.CustomTextView
+                    android:id="@+id/txtConnect"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/connect"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:fontName="@string/font_montserrat_Light"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    app:layout_constraintBottom_toTopOf="@+id/switchFacebook"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtConnect" />
+
+                <com.example.sunshinetravel.CustomWidgets.CustomSwitch
+                    android:id="@+id/switchGoogle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/google"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    android:thumb="@drawable/switch_thumb"
+                    app:fontName="@string/font_montserrat_Regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/switchFacebook"
+                    app:track="@drawable/switch_track" />
+
+                <com.example.sunshinetravel.CustomWidgets.CustomSwitch
+                    android:id="@+id/switchFacebook"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/facebook"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    android:thumb="@drawable/switch_thumb"
+                    app:fontName="@string/font_montserrat_Regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/txtConnect"
+                    app:layout_constraintTop_toBottomOf="@+id/txtConnect"
+                    app:track="@drawable/switch_track" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

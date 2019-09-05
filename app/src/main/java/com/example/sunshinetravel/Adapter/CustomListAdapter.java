@@ -2,6 +2,7 @@ package com.example.sunshinetravel.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sunshinetravel.Activity.FavouritesActivity;
 import com.example.sunshinetravel.Activity.MainActivity;
 import com.example.sunshinetravel.Activity.ProfileActivity;
 import com.example.sunshinetravel.Activity.SettingsActivity;
@@ -27,10 +29,12 @@ public class CustomListAdapter extends RecyclerView.Adapter<CustomListAdapter.My
     private static final String TAG = "CustomListAdapter";
     Context mContext;
     List<DataModel> dataList;
+    private boolean isClicked;
 
-    public CustomListAdapter(MainActivity mainActivity, List<DataModel> dataList) {
+    public CustomListAdapter(MainActivity mainActivity, List<DataModel> dataList, boolean isClicked) {
         this.mContext = mainActivity;
         this.dataList = dataList;
+        this.isClicked = isClicked;
     }
 
 
@@ -56,10 +60,29 @@ public class CustomListAdapter extends RecyclerView.Adapter<CustomListAdapter.My
             public void onClick(View v) {
                 Log.e(TAG, "onClick: ");
                 if (dataModel.getName().equalsIgnoreCase("Profile")) {
+                    isClicked = true;
+                    SharedPreferences preferences = mContext.getSharedPreferences("MyPref",Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("isClicked",isClicked);
+                    editor.apply();
                     mContext.startActivity(new Intent(mContext, ProfileActivity.class));
                 }else if(dataModel.getName().equalsIgnoreCase("Settings")){
+                    isClicked=true;
+                    SharedPreferences preferences = mContext.getSharedPreferences("MyPref",Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("isClicked",isClicked);
+                    editor.apply();
                     mContext.startActivity(new Intent(mContext, SettingsActivity.class));
+                }else if(dataModel.getName().equalsIgnoreCase("Favourites")){
+                    isClicked=true;
+                    SharedPreferences preferences = mContext.getSharedPreferences("MyPref",Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("isClicked",isClicked);
+                    editor.apply();
+                    mContext.startActivity(new Intent(mContext, FavouritesActivity.class));
                 }
+
+
             }
         });
 

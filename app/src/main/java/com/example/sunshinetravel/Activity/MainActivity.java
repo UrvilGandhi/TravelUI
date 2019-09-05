@@ -1,6 +1,8 @@
 package com.example.sunshinetravel.Activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView tv_title;
     private List<DataModel> dataList = new ArrayList<>();
     private ConstraintLayout constCanada, constItaly, constPrague, constUsa;
+    private boolean isClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,8 +111,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         listView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
-        CustomListAdapter listAdapter = new CustomListAdapter(this, dataList);
+        CustomListAdapter listAdapter = new CustomListAdapter(this, dataList,isClicked);
         listView.setAdapter(listAdapter);
+
+        SharedPreferences preferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        isClicked = preferences.getBoolean("isClicked",false);
+        if (isClicked){
+            drawer.closeDrawer(GravityCompat.START);
+        }else{
+            drawer.closeDrawer(GravityCompat.START);
+        }
 
     }
 

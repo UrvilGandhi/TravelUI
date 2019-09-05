@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgFavouritePhoto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/san_francisco" />
+
+        <com.example.sunshinetravel.CustomWidgets.CustomTextView
+            android:id="@+id/txtPlaceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/san_francisco"
+            android:textAlignment="textStart"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:fontName="@string/font_montserrat_SemiBold"
+            app:layout_constraintStart_toEndOf="@+id/imgFavouritePhoto"
+            app:layout_constraintTop_toTopOf="@+id/imgFavouritePhoto" />
+
+        <com.example.sunshinetravel.CustomWidgets.CustomTextView
+            android:id="@+id/txtPlaceCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USA"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textAlignment="textStart"
+            app:fontName="@string/font_montserrat_Regular"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFavouritePhoto"
+            app:layout_constraintEnd_toEndOf="@+id/txtPlaceName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtPlaceName"
+            app:layout_constraintTop_toBottomOf="@+id/txtPlaceName"
+            app:layout_constraintVertical_bias="0.22000003" />
+
+        <ImageView
+            android:id="@+id/remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFavouritePhoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/txtPlaceName"
+            app:layout_constraintTop_toTopOf="@+id/imgFavouritePhoto"
+            app:srcCompat="@drawable/remove" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

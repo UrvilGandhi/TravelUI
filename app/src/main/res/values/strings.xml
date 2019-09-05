@@ -135,12 +135,20 @@
     <string name="the_great_united_states">THe Great United States</string>
     <string name="san_francisco">San Francisco</string>
     <string name="tour_de_san_francisco">Tour De San Francisco</string>
-    <string name="alcatraz_crusies">Alcatraz Crusies</string>
+    <string name="alcatraz_crusies">Alcatraz Cruises</string>
     <string name="_12_3_km">12.3 KM</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="connect">CONNECT</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="email">Email</string>
+    <string name="sample_email">alexander@five.agency</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="sample_address">San Diego, CA, USA</string>
+    <string name="location">Location</string>
 
     <string-array name="navigation_drawer_items_array">
         <item>Home</item>
